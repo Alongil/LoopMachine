@@ -22,15 +22,15 @@ I used the React Bootstrap library along with custom CSS to design the app and m
 
 ## Main elements
 
--App components-rendering the header and the controllers component
+- App components-rendering the header and the controllers component
 
--LoopProggressBar component-in charge of rendering a progress bar and the logic to control its animation. 
+- LoopProggressBar component-in charge of rendering a progress bar and the logic to control its animation. 
 
--Controllers component-this component is in charge of most of the logic in this app.
+- Controllers component-this component is in charge of most of the logic in this app.
 
--The helper contains an array of objects, each containing track information
+- The helper contains an array of objects, each containing track information
 
--useInterval-custom hook designed to set up an interval that still has access to the current state.
+- useInterval-custom hook designed to set up an interval that still has access to the current state.
 
 
 ## Controllers component logic and functions
@@ -57,9 +57,9 @@ I used the React Bootstrap library along with custom CSS to design the app and m
 
 - If I had more time, I would divide the controller component into two separate components, one to handle the recorded session and one to handle the rest of the tracks.
 
-I would also make the functions inside Controllers conponent leaner by exporting some code duplication to an external function (for instance, in the handleClick and handleStop functions, I will take the for loop and set it inside a function Stop ()).
+  I would also make the functions inside Controllers conponent leaner by exporting some code duplication to an external function (for instance, in the handleClick and handleStop     functions, I will take the for loop and set it inside a function Stop ()).
 
-- I am going to improve the code in the upcoming days and will be happy to talk about it in person if it will be relevant.
+  I enjoyed the task and I am going to improve the code in the upcoming days, will be happy to talk about it in person if it will be relevant.
 
 - link to the site: https://condescending-lewin-389312.netlify.app/
 
