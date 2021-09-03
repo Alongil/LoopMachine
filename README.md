@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# Loop Machine
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Playing tracks by clicking on pads 
 
-## Available Scripts
+## Short overview of the project
 
-In the project directory, you can run:
+There are 9 pads, each playing a different song loop for 8 seconds.
 
-### `npm start`
+Clicking on the play button will turn an 8 second loop on.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+If pads are clicked while the loop is on, it will wait for the loop to finish and then start playing.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Clicking on a pad and then clicking on play will turn the track loop on.
 
-### `npm test`
+Clicking on the same pad again will turn it off immediately.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+A track loop will not start unless the previous loop has finished, which makes all clicked tracks play at the same time.
 
-### `npm run build`
+There is an option to save a session (a track or several tracks playing at the same time) and play it again.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I used the React Bootstrap library along with custom CSS to design the app and make it responsive.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Main elements
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-App components-rendering the header and the controllers component
 
-### `npm run eject`
+-LoopProggressBar component-in charge of rendering a progress bar and the logic to control its animation. 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+-Controllers component-this component is in charge of most of the logic in this app.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-The helper contains an array of objects, each containing track information
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+-useInterval-custom hook designed to set up an interval that still has access to the current state.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- 
 
-## Learn More
+## Controllers component logic and functions
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+-The component imports the track helper and creates an object for each track with track id as key is checked, track url and an audio object as properties using the useEffect hook with no dependencies, so it will only run when the component mounts.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+-For each track in the object, the component renders a button with the audio file
 
-### Code Splitting
+## Controllers component's functions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+-handlePlay function-in charge of changing the playing state to true and calling the playCheckedTracks function.
 
-### Analyzing the Bundle Size
+-playCheckedTracks function in charge of playing the tracks that are checked
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+-handleStop in charge of setting the playing state to false and pausing the checked tracks.
 
-### Making a Progressive Web App
+-handleClick incharge of handling a track being clicked, pausing the track if needed, and setting the new track state.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+-recordTracks inchatge of recording the session
 
-### Advanced Configuration
+-handlePlayRecordedTracks-gets the recorded session and setting the playing state to true, cuasing the recorded session to play
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Notes
 
-### Deployment
+-If I had more time, I would divide the controller component into two separate components, one to handle the recorded session and one to handle the rest of the tracks.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+I would also make the functions inside Controllers conponent leaner by exporting some code duplication to an external function (for instance, in the handleClick and handleStop functions, I will take the for loop and set it inside a function Stop ()).
 
-### `npm run build` fails to minify
+-I am going to improve the code in the upcoming days and will be happy to talk about it in person if it will be relevant.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-link to the site: https://condescending-lewin-389312.netlify.app/
+
+
+
+Thank you,
+
+Have fun!
