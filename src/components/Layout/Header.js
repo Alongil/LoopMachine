@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <Container className='header'>
             <h1>Create Cool Tracks</h1>
-            <p>Have fun and hire me plaese :)</p>
+            <p>Have fun :)</p>
         </Container>
 
     );
