@@ -1,0 +1,101 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+body {
+  background-color: #5f5966 !important;
+  font-family: 'Cabin', sans-serif;
+  font-size: 20px;
+  color: white;
+  background-image: url('assets/jpeg/Hardwood.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-size: 110%; */
+
+
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.main.container {
+  width: 90%;
+  background-color: aliceblue;
+  /* box-shadow: 10px 10px #222222ad; */
+  background-image: url('https://ultimatebanff.com/wp-content/uploads/2017/10/iStock_000003555386Large-brushed-silver.jpg');
+  border-radius: 10px;
+  /* margin-top: 3rem; */
+  text-align: center;
+}
+
+/* play and stop icons */
+.bi.bi-play {
+  width: 45px;
+  height: 45px;
+}
+
+.bi.bi-stop-circle {
+  height: 45px;
+  width: 45px;
+}
+
+.bi.bi-download {
+  height: 45px;
+  width: 45px;
+  
+}
+.bi.bi-upload {
+  height: 45px;
+  width: 45px;
+}
+
+@media only screen and (min-width: 768px) and (max-device-width: 1024px){
+  #root {
+    height: 100vh;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  #root {
+    height: 100vh;
+  }
+  .main.container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 575px){
+  #root {
+    height: 100vh;
+    align-items: flex-start;
+  }
+
+}
+
+@media screen and (max-height: 750px){
+  #root {
+    height: 100vh;
+    align-items: flex-start;
+  }
+
+}
+
+
+
+
+
+
+
