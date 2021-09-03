@@ -32,37 +32,36 @@ I used the React Bootstrap library along with custom CSS to design the app and m
 
 -useInterval-custom hook designed to set up an interval that still has access to the current state.
 
-- 
 
 ## Controllers component logic and functions
 
--The component imports the track helper and creates an object for each track with track id as key is checked, track url and an audio object as properties using the useEffect hook with no dependencies, so it will only run when the component mounts.
+- The component imports the track helper and creates an object for each track with track id as key is checked, track url and an audio object as properties using the useEffect hook with no dependencies, so it will only run when the component mounts.
 
--For each track in the object, the component renders a button with the audio file
+- For each track in the object, the component renders a button with the audio file
 
 ## Controllers component's functions
 
--handlePlay function-in charge of changing the playing state to true and calling the playCheckedTracks function.
+- handlePlay function-in charge of changing the playing state to true and calling the playCheckedTracks function.
 
--playCheckedTracks function in charge of playing the tracks that are checked
+- playCheckedTracks function in charge of playing the tracks that are checked
 
--handleStop in charge of setting the playing state to false and pausing the checked tracks.
+- handleStop in charge of setting the playing state to false and pausing the checked tracks.
 
--handleClick incharge of handling a track being clicked, pausing the track if needed, and setting the new track state.
+- handleClick incharge of handling a track being clicked, pausing the track if needed, and setting the new track state.
 
--recordTracks inchatge of recording the session
+- recordTracks inchatge of recording the session
 
--handlePlayRecordedTracks-gets the recorded session and setting the playing state to true, cuasing the recorded session to play
+- handlePlayRecordedTracks-gets the recorded session and setting the playing state to true, cuasing the recorded session to play
 
 ## Notes
 
--If I had more time, I would divide the controller component into two separate components, one to handle the recorded session and one to handle the rest of the tracks.
+- If I had more time, I would divide the controller component into two separate components, one to handle the recorded session and one to handle the rest of the tracks.
 
 I would also make the functions inside Controllers conponent leaner by exporting some code duplication to an external function (for instance, in the handleClick and handleStop functions, I will take the for loop and set it inside a function Stop ()).
 
--I am going to improve the code in the upcoming days and will be happy to talk about it in person if it will be relevant.
+- I am going to improve the code in the upcoming days and will be happy to talk about it in person if it will be relevant.
 
--link to the site: https://condescending-lewin-389312.netlify.app/
+- link to the site: https://condescending-lewin-389312.netlify.app/
 
 
 
