@@ -1,6 +1,6 @@
 # Loop Machine
 
-Playing tracks by clicking on pads 
+Playing tracks by clicking on pads.
 
 ## Short overview of the project
 
@@ -28,7 +28,7 @@ I used the React Bootstrap library along with custom CSS to design the app and m
 
 - Controllers component-this component is in charge of most of the logic in this app.
 
-- The helper contains an array of objects, each containing track information
+- The tracks helper, contains an array of objects, each containing track information.
 
 - useInterval-custom hook designed to set up an interval that still has access to the current state.
 
@@ -37,21 +37,21 @@ I used the React Bootstrap library along with custom CSS to design the app and m
 
 - The component imports the track helper and creates an object for each track with track id as key is checked, track url and an audio object as properties using the useEffect hook with no dependencies, so it will only run when the component mounts.
 
-- For each track in the object, the component renders a button with the audio file
+- For each track in the object, the component renders a button with the audio file.
 
 ## Controllers component's functions
 
 - handlePlay function-in charge of changing the playing state to true and calling the playCheckedTracks function.
 
-- playCheckedTracks function in charge of playing the tracks that are checked
+- playCheckedTracks function in charge of playing the tracks that are checked.
 
 - handleStop in charge of setting the playing state to false and pausing the checked tracks.
 
 - handleClick incharge of handling a track being clicked, pausing the track if needed, and setting the new track state.
 
-- recordTracks inchatge of recording the session
+- recordTracks inchatge of recording the session.
 
-- handlePlayRecordedTracks-gets the recorded session and setting the playing state to true, cuasing the recorded session to play
+- handlePlayRecordedTracks-gets the recorded session and setting the playing state to true, cuasing the recorded session to play.
 
 ## Notes
 
@@ -61,7 +61,7 @@ I used the React Bootstrap library along with custom CSS to design the app and m
 
   I enjoyed the task and I am going to improve the code in the upcoming days, will be happy to talk about it in person if it will be relevant.
 
-- link to the site: https://condescending-lewin-389312.netlify.app/
+- link to the site: https://condescending-lewin-389312.netlify.app/.
 
 
 
