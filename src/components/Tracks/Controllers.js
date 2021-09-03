@@ -93,7 +93,6 @@ const NewControllers = () => {
 
     // saving the checked tracks only in local storage, if there arnt't any, alerting and setting isPlaying state to false
     const recordTracks = (e) => {
-        setShow(true);
         let counter = 0;
         for (const track in tracks) {
             if (tracks[track].isChecked) {
@@ -104,9 +103,10 @@ const NewControllers = () => {
         if (counter > 0 && isPlaying) {
             let savedTracks = tracks;
             localStorage.setItem('savedTracks', JSON.stringify(savedTracks));
+            setShow(true);
         } else {
             setIsPlaying(false);
-            alert('Sorry, I can\'t record silence, lets start over please');
+            alert('Sorry, I can\'t save an empty session');
         }
     };
     //getting the recorded tracks from local storage and setting tracks object to tracks from local storage
