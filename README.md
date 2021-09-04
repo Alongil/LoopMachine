@@ -1,70 +1,79 @@
 # Loop Machine
 
-Playing tracks by clicking on pads.
+The App allows you to play up to 9 tracks simultaniously, constructed over an 8-seconds loop.
 
-## Short overview of the project
+## Project Overview
 
-There are 9 pads, each playing a different song loop for 8 seconds.
+There are 9 pads, each represents a different 8 seconds track.
 
-Clicking on the play button will turn an 8 second loop on.
+Clicking on the play button will activate an 8 second loop which will be the baseline of the music session.
 
-If pads are clicked while the loop is on, it will wait for the loop to finish and then start playing.
+Once attached, the track will be played along with the loop, in every cycle:
 
-Clicking on a pad and then clicking on play will turn the track loop on.
+- If pads are clicked while the loop is on, the tracks will be attached to the loop and start playing - but only at the next cycle.
 
-Clicking on the same pad again will turn it off immediately.
+- Clicking on a pad and then clicking on play will turn the track loop on.
 
-A track loop will not start unless the previous loop has finished, which makes all clicked tracks play at the same time.
+- Clicking on the same pad again will turn it off immediately and also will detach it from the loop.
 
-There is an option to save a session (a track or several tracks playing at the same time) and play it again.
+There is an option to save a session (The current state of activated tracks in the tracks-pad):
+
+- Once the loop is active, the user can save the tracks state (If at least one track is activated).
+
+- When the loop is stopped, the user can load and play a saved session.
+
+- The user can continue and modify a loaded session, then re-save it.
 
 I used the React Bootstrap library along with custom CSS to design the app and make it responsive.
 
 ## Main elements
 
-- App components-rendering the header and the controllers component
+- Controllers component - in charge of most of the app's logic. (More on this in the next chapter).
 
-- LoopProggressBar component-in charge of rendering a progress bar and the logic to control its animation. 
+- RecordTracks component - handles the save and play saved session logic.
 
-- Controllers component-this component is in charge of most of the logic in this app.
+- The TracksInfo helper - contains an array of objects, each containing information about an individual track, including it's audio source url and name.
 
-- The tracks helper, contains an array of objects, each containing track information.
+- Tracks object - an object that contains all of the tracks information, their audio object, and their state (activated or not).
 
-- useInterval-custom hook designed to set up an interval that still has access to the current state.
+- useInterval - custom hook designed to set up an interval that still has access to the current pad's in-memory state. (Will be happy to elaborate on the decision to include this face to face)
 
 
-## Controllers component logic and functions
+## Controllers component
 
-- The component imports the track helper and creates an object for each track with track id as key is checked, track url and an audio object as properties using the useEffect hook with no dependencies, so it will only run when the component mounts.
+- The component imports the track helper and creates a general 'Tracks-State' object, with each track id, state, track url and a corresponding audio object.
 
-- For each track in the object, the component renders a button with the audio file.
+- For each track in the object, the component renders a track button using its properties.
 
-## Controllers component's functions
+### Component's Functions
 
-- handlePlay function-in charge of changing the playing state to true and calling the playCheckedTracks function.
+- handlePlay / handleStop - In charge of changing the playing state to true/false, held in the tracks-state object.
 
-- playCheckedTracks function in charge of playing the tracks that are checked.
+- play / stop - In charge of playing/stopping the tracks that are checked/unchecked in the tracks-state object.
 
-- handleStop in charge of setting the playing state to false and pausing the checked tracks.
+- handleClick - In charge of handling a track click, pausing the track if needed, and setting the new track's state.
 
-- handleClick incharge of handling a track being clicked, pausing the track if needed, and setting the new track state.
+## Additional Importatnt Componenets
 
-- recordTracks inchatge of recording the session.
+### LoopProggressBar Component
 
-- handlePlayRecordedTracks-gets the recorded session and setting the playing state to true, cuasing the recorded session to play.
+In charge of rendering a progress bar and the logic to control its animation.
+
+### RecodTracks Component
+
+In charge of the the recording save and load buttons. Functions includes:
+
+- recordTracks incharge of recording the session.
+
+- handlePlayRecordedTracks-gets the recorded session and setting the playing state to true, cuasing the controllers component to rerender and play the recorded session.
 
 ## Notes
 
-- If I had more time, I would divide the controller component into two separate components, one to handle the recorded session and one to handle the rest of the tracks.
+- As for Saturday (4.9.21) I had an idea of how to improve my code design and applied it to the project. The redisgn is basically the addition of a new component that handles the already-existing recording related buttons, which saves some unnecessary re-renders. If you'd like to review my code as it was at the given deadline (a day before), please revert to commit: c0a20cf32d05b0e2100f79b5a5c06048149c6e69
 
-  I would also make the functions inside Controllers conponent leaner by exporting some code duplication to an external function (for instance, in the handleClick and handleStop     functions, I will take the for loop and set it inside a function Stop ()).
+- link to the site: https://condescending-lewin-389312.netlify.app/
 
-  I enjoyed the task and I am going to improve the code in the upcoming days, will be happy to talk about it in person if it will be relevant.
+- I enjoyed the task, will be happy to talk about it in person. Thank you for the opportunity.
 
-- link to the site: https://condescending-lewin-389312.netlify.app/.
-
-
-
-Thank you,
 
 Have fun!
