@@ -2,6 +2,8 @@
 
 The App allows you to play up to 9 tracks simultaniously, constructed over an 8-seconds loop.
 
+### EDIT (4.9.21): Please read the notes below about today's commit
+
 ## Project Overview
 
 There are 9 pads, each represents a different 8 seconds track.
