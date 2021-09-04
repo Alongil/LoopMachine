@@ -37,10 +37,10 @@ const LoopProgressBar = ({ isPlaying }) => {
     return (
         <>
             <ProgressBar
-                // ref={progressBar}
                 striped
                 now={progressState}
-                animated min={0}
+                animated 
+                min={0}
                 max={7}
                 className='progress-bar-blue bg-warning'
             />

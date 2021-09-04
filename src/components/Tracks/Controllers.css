@@ -6,45 +6,23 @@
     padding: 10px;
   }
   
-  .play-btn {
+  .play-btn, .stop-btn, .record-btn, .play-recorded-btn {
     width: 80px;
     height: 80px;
-    /* margin: 10px; */
     margin: 20px 10px 20px 10px;
     
   }
-  .stop-btn {
-    width: 90px;
-    height: 80px;
-    margin: 20px 10px 20px 10px;
-  }
-   .record-btn {
-    width: 90px;
-    height: 80px;
-    margin: 10px; 
-    margin: 20px 10px 20px 10px; 
-   }
-    
 
-  .play-recorded-btn {
-    width: 90px;
-    height: 80px;
-    margin: 20px 10px 20px 10px;
-  }
-
-  
   .square {
      height: 8rem !important;
      padding: 10px;
-     /* border: black !important; */
-     /* background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png'); */
   } 
   
   .track.btn {
     padding: 0;
     font-size: 1rem !important;
     width: 50%;
-    height: 90%;
+    height: 100%; 
   } 
 
   .square .btn.active, .btn.active.btn-primary {
@@ -59,6 +37,11 @@
   
   /* media queries for ipads and mobile */
   @media only screen  and (max-device-width: 1023px){
+    .container.container-tracks{
+      width: 100%;
+    }
+  }
+  @media only screen  and (max-device-width: 768px){
     .container.container-tracks{
       width: 100%;
     }
