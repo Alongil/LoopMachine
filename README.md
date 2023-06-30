@@ -73,7 +73,7 @@ In charge of the the recording save and load buttons. Functions includes:
 
 - As for Saturday (4.9.21) I had an idea of how to improve my code design and applied it to the project. The redisgn is basically the addition of a new component that handles the already-existing recording related buttons, which saves some unnecessary re-renders. If you'd like to review my code as it was at the given deadline (a day before), please revert to commit: c0a20cf32d05b0e2100f79b5a5c06048149c6e69
 
-- link to the site: https://condescending-lewin-389312.netlify.app/
+- link to the site: https://looin.netlify.app/
 
 - I enjoyed the task, will be happy to talk about it in person. Thank you for the opportunity.
 
